@@ -7,6 +7,10 @@ const FeedbackSchema = new Schema({
             type : mongoose.SchemaTypes.ObjectId,
             ref : "traveller"
         },
+        tripId: {
+            type : mongoose.SchemaTypes.ObjectId,
+            ref :"uniqueTrips"
+        },
         category:{
             type : String,
             enum:["driver" , "trip"],

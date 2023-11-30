@@ -35,6 +35,17 @@ app.use(function (req, res, next) {
 
 // authentication of the user
 app.use("/auth", routes.auth);
+app.post("/create-trip",passport.authenticate("jwt", { session: false }),routes.addTrip);
+
+app.post("/start-trip/",passport.authenticate("jwt", { session: false }),routes.startTrip);
+
+app.post("/end-trip/",passport.authenticate("jwt", { session: false }), routes.endTrip)
+app.post("/feedback-for-driver/",passport.authenticate("jwt", { session: false }),routes.feedbackForDriver);
+app.post("/feedback-for-trip/",passport.authenticate("jwt", { session: false }),routes.feedbackForTrip);
+app.get("/overall-feedback-driver/",passport.authenticate("jwt", { session: false }),routes.overallFeedbackDriver);
+app.get("/overall-feedback-trip/",passport.authenticate("jwt", { session: false }),routes.overallFeedbackTrip);
+app.get("/all-feedback-by-traveller/",passport.authenticate("jwt", { session: false }),routes.allFeedbackByTraveller);
+app.get("/all-feedback-all-trips/",passport.authenticate("jwt", { session: false }),routes.allFeedbackOfTrips)
 // ///////////////////////////    ROUTES END  ////////////////////////////////
 
 // Handle errors.

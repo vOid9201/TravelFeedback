@@ -11,10 +11,6 @@ const ManagerSchema = new Schema({
     type: String,
     required: true,
   },
-//   role : {
-//     type : String,
-//     default : "",
-//   },
   contactNo: {
     type: String,
     required: true,

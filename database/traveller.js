@@ -28,6 +28,19 @@ const TravellerSchema = new Schema({
     type: String,
     required: true,
   },
+
+  //unreaded check
+  notification : [
+   {
+    tripId:{
+      type : mongoose.SchemaTypes.ObjectId,
+      ref : "uniqueTrips"
+    },
+    isReaded : {
+      type : Boolean
+    }
+   }
+]
 });
 
 TravellerSchema.methods.isValidPassword = async function (password) {

@@ -10,13 +10,6 @@ const TripsSchema = new Schema({
         type : String,
         required : true,
     },
-    uniqueId : {
-
-    },
-    feedbacks :[{
-        type : mongoose.SchemaTypes.ObjectId,
-        ref: "feedback",
-    }],
     price : {
         type:Number,
         required : true,
